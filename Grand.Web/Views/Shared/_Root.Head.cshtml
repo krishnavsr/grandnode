@@ -39,6 +39,8 @@
     {
         <mini-profiler />
     }
+    <base href="~/" />
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css">
 </head>
 <body>
     <resources asp-type="ScriptHeader" />
@@ -46,5 +48,7 @@
     @Html.GrandCssFiles(this.Url, ResourceLocation.Footer)
     @Html.GrandScripts(this.Url, ResourceLocation.Footer)
     <resources asp-type="ScriptFooter" />
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
 </body>
 </html>

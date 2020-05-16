@@ -178,6 +178,8 @@ namespace Grand.Framework.Infrastructure.Extensions
             application.UseEndpoints(endpoints =>
             {
                 endpoints.ServiceProvider.GetRequiredService<IRoutePublisher>().RegisterRoutes(endpoints);
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToController("Blazor", "Home");
             });
         }
 
@@ -187,6 +189,7 @@ namespace Grand.Framework.Infrastructure.Extensions
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public static void UseGrandStaticFiles(this IApplicationBuilder application, GrandConfig grandConfig)
         {
+            application.UseStaticFiles();
             //static files
             application.UseStaticFiles(new StaticFileOptions {
 

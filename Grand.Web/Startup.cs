@@ -42,6 +42,7 @@ namespace Grand.Web
         /// <param name="services">Collection of service descriptors</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddServerSideBlazor();
             services.ConfigureApplicationServices(Configuration);
         }
 
